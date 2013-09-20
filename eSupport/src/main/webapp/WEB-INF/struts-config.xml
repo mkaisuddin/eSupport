@@ -11,7 +11,10 @@
 		      
 		<form-bean name="stageForm"   
 		      type="com.mkyong.customer.form.StageForm" />
-		
+		      
+		<form-bean name="courtForm"   
+		      type="com.mkyong.customer.form.CourtForm" />
+		      		
 		<form-bean name="dynaCustomerListForm"   
 		      type="org.apache.struts.action.DynaActionForm">
 		      <form-property name="customerList" type="java.util.List"/>
@@ -52,6 +55,23 @@
 			path="/AddStage"
 			type="com.mkyong.customer.action.AddStageAction"
 			name="stageForm"
+			validate="true"
+			input="/pages/customer/add_customer.jsp"
+			>	
+ 
+			<forward name="success" redirect="true" path="/ListCustomer.do"/>
+		</action>
+		
+		<action
+			path="/AddCourtPage"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/court-form.jsp"/>	
+
+
+		<action
+			path="/AddCourt"
+			type="com.mkyong.customer.action.AddCourtAction"
+			name="courtForm"
 			validate="true"
 			input="/pages/customer/add_customer.jsp"
 			>	

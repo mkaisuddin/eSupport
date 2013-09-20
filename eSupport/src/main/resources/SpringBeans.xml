@@ -10,6 +10,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<!-- Beans Declaration -->
 	<import resource="com/mkyong/customer/spring/CustomerBean.xml"/>
 	<import resource="com/mkyong/customer/spring/StageBean.xml"/>
+	<import resource="com/mkyong/customer/spring/ContactBean.xml"/>
+	<import resource="com/mkyong/customer/spring/CourtBean.xml"/>
 	
  
 </beans>
