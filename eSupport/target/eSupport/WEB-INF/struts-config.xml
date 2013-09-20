@@ -18,10 +18,31 @@
 	
 	<action-mappings>
 
-	 	<action
+	 	<!-- <action
 			path="/AddCustomerPage"
 			type="org.apache.struts.actions.ForwardAction"
-			parameter="/pages/customer/add_customer.jsp"/>
+			parameter="/pages/customer/add_customer.jsp"/> -->
+		<action
+			path="/AddCustomerPage"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/user-form.jsp"/>	
+
+
+		<action
+			path="/AddCustomer"
+			type="com.mkyong.customer.action.AddCustomerAction"
+			name="customerForm"
+			validate="true"
+			input="/pages/customer/add_customer.jsp"
+			>	
+ 
+			<forward name="success" redirect="true" path="/ListCustomer.do"/>
+		</action>
+		
+		<action
+			path="/AddStagePage"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/stage-form.jsp"/>	
 
 
 		<action
@@ -55,5 +76,11 @@
 		<set-property property="contextConfigLocation"
 		value="/WEB-INF/classes/SpringBeans.xml" />
   	</plug-in>
+  	
+  	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+		<set-property property="definitions-config"
+		value="/WEB-INF/tiles-defs.xml"/>
+	</plug-in>
+  	
  
 </struts-config>

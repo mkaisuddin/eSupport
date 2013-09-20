@@ -31,10 +31,10 @@
 			<h3><span class="icon-tasks"></span>Tasks</h3>
 			<ul>
 				<li><a href="#">Add Stage</a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#">Overdues</a></li>
-				<li><a href="#">Recurring</a></li>
-				<li><a href="#">Settings</a></li>
+				<li><a href="#">Add Court</a></li>
+				<li><a href="#">Add Advocate</a></li>
+				<li><a href="#">Add Client</a></li>
+				<li><a href="#">Add Opponent</a></li>
 			</ul>
 		</li>
 		<li>
