@@ -16,7 +16,7 @@
 			<ul>
 				<li><html:link action="/AddCustomerPage.do">Customer</html:link></li>
 				<li><html:link action="/AddStagePage.do">Stage</html:link></li>
-				<li><a href="#">Court</a></li>
+				<li><html:link action="/AddCourtPage.do">Court</html:link></li>
 				<li><a href="#">Advocate</a></li>
 				<li><a href="#">Client</a></li>
 				<li><a href="#">Opponent</a></li>

@@ -12,7 +12,7 @@
             <column name="NAME" length="45" not-null="true" />
         </property>
         <property name="description" type="string">
-            <column name="description" not-null="true" />
+            <column name="DESCRIPTION" not-null="true" />
         </property>
         <property name="createdDate" type="timestamp">
             <column name="CREATED_DATE" length="19" not-null="true" />

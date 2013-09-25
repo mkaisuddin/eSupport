@@ -19,7 +19,7 @@
         </property>
         
         <many-to-one name="contact" class="com.mkyong.customer.model.Contact" fetch="select">
-            <column name="ID" not-null="true" />
+            <column name="CONTACT_ID" not-null="true" />
         </many-to-one>
     </class>
 </hibernate-mapping>

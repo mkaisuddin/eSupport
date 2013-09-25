@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Contact implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -448539438788410559L;
 	private long id;
 	private String address;
 	private String deskPhone;
@@ -15,6 +19,9 @@ public class Contact implements java.io.Serializable{
     
     private Set<Court> court = 
 			new HashSet<Court>(0);
+    
+    private Set<User> user = 
+			new HashSet<User>(0);
 	
 	public Contact(){
 		
@@ -82,6 +89,14 @@ public class Contact implements java.io.Serializable{
 
 	public void setCourt(Set<Court> court) {
 		this.court = court;
+	}
+
+	public Set<User> getUser() {
+		return user;
+	}
+
+	public void setUser(Set<User> user) {
+		this.user = user;
 	}
 	
 	

@@ -9,6 +9,7 @@ public class Court implements java.io.Serializable{
 	private Date createdDate;
 	
 	private Contact contact;
+	
 	public Court(){
 		
 	}
@@ -24,10 +25,10 @@ public class Court implements java.io.Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 	public Date getCreatedDate() {
