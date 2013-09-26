@@ -13,6 +13,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<import resource="com/mkyong/customer/spring/ContactBean.xml"/>
 	<import resource="com/mkyong/customer/spring/CourtBean.xml"/>
 	<import resource="com/mkyong/customer/spring/UserBean.xml"/>
+	<import resource="com/mkyong/customer/spring/AdvocateBean.xml"/>
+	<import resource="com/mkyong/customer/spring/ClientBean.xml"/>
+	<import resource="com/mkyong/customer/spring/CaseBean.xml"/>
 	
  
 </beans>

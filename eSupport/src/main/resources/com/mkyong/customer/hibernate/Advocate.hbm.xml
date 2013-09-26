@@ -11,14 +11,13 @@
         <property name="advUserName" type="string">
             <column name="ADV_USER_NAME" length="45" not-null="true" />
         </property>
-        </property>
         <property name="createdDate" type="timestamp">
             <column name="CREATED_DATE" length="19" not-null="true" />
-        </property>
-            
+        </property>       
                 
         <many-to-one name="user" class="com.mkyong.customer.model.User" fetch="select">
             <column name="USER_ID" not-null="true" />
         </many-to-one>
+        
     </class>
 </hibernate-mapping>

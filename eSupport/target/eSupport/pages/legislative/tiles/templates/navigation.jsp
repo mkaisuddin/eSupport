@@ -11,14 +11,14 @@
 			</ul>
 		</li>
 		<!-- we will keep this LI open by default -->
-		<li class="active">
+		<li>
 			<h3><span class="icon-tasks"></span>Process Management</h3>
 			<ul>
 				<li><html:link action="/AddCustomerPage.do">Customer</html:link></li>
 				<li><html:link action="/AddStagePage.do">Stage</html:link></li>
 				<li><html:link action="/AddCourtPage.do">Court</html:link></li>
 				<li><html:link action="/AddAdvocatePage.do">Advocate</html:link></li>
-				<li><a href="#">Client</a></li>
+				<li><html:link action="/AddClientPage.do">Client</html:link></li>
 				<li><a href="#">Opponent</a></li>
 			</ul>
 		</li>
@@ -36,13 +36,10 @@
 				<li><a href="#">Settings</a></li>
 			</ul>
 		</li>
-		<li>
-			<h3><span class="icon-heart"></span>Favourites</h3>
+		<li class="active">
+			<h3><span class="icon-heart"></span>Case Management</h3>
 			<ul>
-				<li><a href="#">Global favs</a></li>
-				<li><a href="#">My favs</a></li>
-				<li><a href="#">Team favs</a></li>
-				<li><a href="#">Settings</a></li>
+				<li><html:link action="/AddCasePage.do">Case</html:link></li>
 			</ul>
 		</li>
 		<li>

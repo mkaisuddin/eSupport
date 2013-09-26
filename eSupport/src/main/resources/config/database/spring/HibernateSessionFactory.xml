@@ -26,6 +26,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	           <value>com/mkyong/customer/hibernate/Contact.hbm.xml</value>
 	           <value>com/mkyong/customer/hibernate/Court.hbm.xml</value>
 	           <value>com/mkyong/customer/hibernate/User.hbm.xml</value>
+	           <value>com/mkyong/customer/hibernate/Advocate.hbm.xml</value>
+	           <value>com/mkyong/customer/hibernate/Client.hbm.xml</value>
+	           <value>com/mkyong/customer/hibernate/Case.hbm.xml</value>
 		</list>
      </property>	
  

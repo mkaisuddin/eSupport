@@ -10,9 +10,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.web.struts.ActionSupport;
 
+import com.mkyong.customer.bo.AdvocateBo;
 import com.mkyong.customer.bo.ContactBo;
 import com.mkyong.customer.bo.UserBo;
 import com.mkyong.customer.form.AdvocateForm;
+import com.mkyong.customer.model.Advocate;
 import com.mkyong.customer.model.Contact;
 import com.mkyong.customer.model.User;
 
@@ -27,6 +29,9 @@ public class AddAdvocateAction extends ActionSupport {
 		
 		UserBo userBo = (UserBo) getWebApplicationContext().getBean(
 				"userBo");
+		
+		AdvocateBo advocateBo = (AdvocateBo) getWebApplicationContext().getBean(
+				"advocateBo");
 
 		AdvocateForm advocateForm = (AdvocateForm) form;
 
@@ -53,6 +58,17 @@ public class AddAdvocateAction extends ActionSupport {
 		contact.getUser().add(user);
 		
 		userBo.addUser(user);
+		
+		Advocate advocate = new Advocate();
+		
+		advocate.setAdvUserName(advocateForm.getAdvUserName());
+		advocate.setUser(user);
+		
+		user.getAdvocate().add(advocate);
+		
+		advocateBo.addAdvocate(advocate);
+		
+		
 
 		return mapping.findForward("success");
 

@@ -24,5 +24,22 @@
         <many-to-one name="contact" class="com.mkyong.customer.model.Contact" fetch="select">
             <column name="CONTACT_ID" not-null="true" />
         </many-to-one>
+        
+        <set name="advocate" table="advocates" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mkyong.customer.model.Advocate" />
+        </set>
+        
+        <set name="client" table="clients" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mkyong.customer.model.Client" />
+        </set>
+        
     </class>
 </hibernate-mapping>
