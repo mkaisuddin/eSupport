@@ -14,6 +14,9 @@
 		      
 		<form-bean name="courtForm"   
 		      type="com.mkyong.customer.form.CourtForm" />
+		
+		<form-bean name="advocateForm"   
+		      type="com.mkyong.customer.form.AdvocateForm" />
 		      		
 		<form-bean name="dynaCustomerListForm"   
 		      type="org.apache.struts.action.DynaActionForm">
@@ -56,7 +59,7 @@
 			type="com.mkyong.customer.action.AddStageAction"
 			name="stageForm"
 			validate="true"
-			input="/pages/customer/add_customer.jsp"
+			input="/pages/legislative/contents/definations/stage-form.jsp"
 			>	
  
 			<forward name="success" redirect="true" path="/ListCustomer.do"/>
@@ -73,7 +76,7 @@
 			type="com.mkyong.customer.action.AddCourtAction"
 			name="courtForm"
 			validate="true"
-			input="/pages/customer/add_customer.jsp"
+			input="/pages/legislative/contents/definations/court-form.jsp"
 			>	
  
 			<forward name="success" redirect="true" path="/ListCustomer.do"/>
@@ -87,6 +90,23 @@
  
 			<forward name="success" path="/pages/customer/list_customer.jsp"/>
 		</action>
+		
+		<action
+			path="/AddAdvocatePage"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advocate-form.jsp"/>	
+		
+		<action
+			path="/AddAdvocate"
+			type="com.mkyong.customer.action.AddAdvocateAction"
+			name="advocateForm"
+			validate="true"
+			input="/pages/legislative/contents/definations/advocate-form.jsp"
+			>	
+ 
+			<forward name="success" redirect="true" path="/ListCustomer.do"/>
+		</action>	
+		
 		
 		
 	</action-mappings>

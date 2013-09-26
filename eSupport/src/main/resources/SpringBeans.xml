@@ -12,6 +12,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<import resource="com/mkyong/customer/spring/StageBean.xml"/>
 	<import resource="com/mkyong/customer/spring/ContactBean.xml"/>
 	<import resource="com/mkyong/customer/spring/CourtBean.xml"/>
+	<import resource="com/mkyong/customer/spring/UserBean.xml"/>
 	
  
 </beans>

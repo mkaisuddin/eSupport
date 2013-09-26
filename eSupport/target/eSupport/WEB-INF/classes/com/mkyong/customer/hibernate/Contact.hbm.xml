@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.mkyong.customer.model.Contact" table="contacts">
         <id name="id" type="long">
-            <column name="CONTACT_ID" />
+            <column name="ID" />
             <generator class="increment" />
         </id>
         <property name="address" type="string">
@@ -18,10 +18,10 @@
             <column name="MOBILE" not-null="true" />
         </property>
         <property name="email" type="string">
-            <column name="EMAIL" not-null="true" />
+            <column name="EMAIL" not-null="false" />
         </property>
         <property name="www" type="string">
-            <column name="WWW" not-null="true" />
+            <column name="WWW" not-null="false" />
         </property>
         <property name="createdDate" type="timestamp">
             <column name="CREATED_DATE" length="19" not-null="true" />
@@ -33,6 +33,14 @@
                 <column name="CONTACT_ID" not-null="true" />
             </key>
             <one-to-many class="com.mkyong.customer.model.Court" />
+        </set>
+        
+        <set name="user" table="users" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CONTACT_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mkyong.customer.model.User" />
         </set>
     </class>
 </hibernate-mapping>

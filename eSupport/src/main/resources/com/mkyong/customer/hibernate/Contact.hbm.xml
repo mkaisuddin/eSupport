@@ -35,12 +35,12 @@
             <one-to-many class="com.mkyong.customer.model.Court" />
         </set>
         
-        <!-- <set name="user" table="users" 
+        <set name="user" table="users" 
 				inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="CONTACT_ID" not-null="true" />
             </key>
             <one-to-many class="com.mkyong.customer.model.User" />
-        </set> -->
+        </set>
     </class>
 </hibernate-mapping>
