@@ -10,6 +10,6 @@
 <title>eSupport - One place everything you needed</title>
 </head>
 <body>
-<jsp:forward page="/AddCustomerPage.do"></jsp:forward>
+<jsp:forward page="/login.jsp"></jsp:forward>
 </body>
 </html>

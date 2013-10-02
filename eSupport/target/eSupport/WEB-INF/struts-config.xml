@@ -23,6 +23,9 @@
 	
 		<form-bean name="caseForm"   
 		      type="com.mkyong.customer.form.CaseForm" />
+		
+		<form-bean name="loginForm"   
+		      type="com.mkyong.customer.form.LoginForm" />
 		      		      		
 		<form-bean name="dynaCustomerListForm"   
 		      type="org.apache.struts.action.DynaActionForm">
@@ -143,6 +146,17 @@
 			>	
  
 			<forward name="success" redirect="true" path="/ListCustomer.do"/>
+		</action>
+		
+		<action
+			path="/Login"
+			type="com.mkyong.customer.action.LoginAction"
+			name="loginForm"
+			validate="false"
+			input="/login.jsp"
+			>	
+ 
+			<forward name="success" redirect="true" path="/AddCustomerPage.do"/>
 		</action>
 		
 	</action-mappings>

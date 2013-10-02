@@ -5,6 +5,7 @@ import java.util.Date;
 public class Advocate implements java.io.Serializable{
 	private long id;
 	private String advUserName;
+	private String password;
 	private Date createdDate;
 	
 	private User user;
@@ -39,6 +40,14 @@ public class Advocate implements java.io.Serializable{
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

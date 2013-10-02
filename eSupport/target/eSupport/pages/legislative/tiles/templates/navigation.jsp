@@ -11,7 +11,7 @@
 			</ul>
 		</li>
 		<!-- we will keep this LI open by default -->
-		<li>
+		<li class="active">
 			<h3><span class="icon-tasks"></span>Process Management</h3>
 			<ul>
 				<li><html:link action="/AddCustomerPage.do">Customer</html:link></li>
@@ -36,7 +36,7 @@
 				<li><a href="#">Settings</a></li>
 			</ul>
 		</li>
-		<li class="active">
+		<li>
 			<h3><span class="icon-heart"></span>Case Management</h3>
 			<ul>
 				<li><html:link action="/AddCasePage.do">Case</html:link></li>

@@ -11,6 +11,10 @@
         <property name="advUserName" type="string">
             <column name="ADV_USER_NAME" length="45" not-null="true" />
         </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="45" not-null="true" />
+        </property>
+        
         <property name="createdDate" type="timestamp">
             <column name="CREATED_DATE" length="19" not-null="true" />
         </property>       
