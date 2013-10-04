@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 April 2010 8:33:09 PM by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.mkyong.customer.model.Advocate" table="advocates">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="advUserName" type="string">
+            <column name="ADV_USER_NAME" length="45" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="19" not-null="true" />
+        </property>       
+                
+        <many-to-one name="user" class="com.mkyong.customer.model.User" fetch="select">
+            <column name="USER_ID" not-null="true" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

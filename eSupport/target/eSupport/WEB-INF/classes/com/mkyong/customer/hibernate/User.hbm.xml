@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 April 2010 8:33:09 PM by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.mkyong.customer.model.User" table="users">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="45" not-null="true" />
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="DOB" length="19" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="20" not-null="true" />
+        </property>        
+                
+        <many-to-one name="contact" class="com.mkyong.customer.model.Contact" fetch="select">
+            <column name="CONTACT_ID" not-null="true" />
+        </many-to-one>
+        
+        <set name="advocate" table="advocates" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mkyong.customer.model.Advocate" />
+        </set>
+        
+        <set name="client" table="clients" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mkyong.customer.model.Client" />
+        </set>
+        
+    </class>
+</hibernate-mapping>
