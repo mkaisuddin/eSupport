@@ -8,5 +8,11 @@
 	<put name="navigation" value="/pages/legislative/tiles/templates/navigation.jsp" />
 	<put name="footer" value="/pages/legislative/tiles/templates/footer.jsp" />
    </definition>
+   
+   <definition name="esupport-legislative-advocate" path="/pages/legislative/tiles/layouts/common-layout.jsp">
+	<put name="header" value="/pages/legislative/tiles/templates/header.jsp" />
+	<put name="navigation" value="/pages/legislative/tiles/templates/navigationAdvocate.jsp" />
+	<put name="footer" value="/pages/legislative/tiles/templates/footer.jsp" />
+   </definition>
  
 </tiles-definitions>

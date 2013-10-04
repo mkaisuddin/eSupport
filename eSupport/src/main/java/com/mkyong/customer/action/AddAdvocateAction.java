@@ -17,6 +17,7 @@ import com.mkyong.customer.form.AdvocateForm;
 import com.mkyong.customer.model.Advocate;
 import com.mkyong.customer.model.Contact;
 import com.mkyong.customer.model.User;
+import com.mkyong.customer.util.PasswordHash;
 
 public class AddAdvocateAction extends ActionSupport {
 
@@ -52,7 +53,7 @@ public class AddAdvocateAction extends ActionSupport {
 		user.setFirstName(advocateForm.getFirstName());
 		user.setLastName(advocateForm.getLastName());
 		user.setDob(formatter.parse(advocateForm.getDob()));
-		user.setPassword("P@55word");
+		//user.setPassword("P@55word");
 		user.setContact(contact);
 		
 		contact.getUser().add(user);
@@ -62,6 +63,7 @@ public class AddAdvocateAction extends ActionSupport {
 		Advocate advocate = new Advocate();
 		
 		advocate.setAdvUserName(advocateForm.getAdvUserName());
+		advocate.setPassword(PasswordHash.encrypt(advocateForm.getPassword()));
 		advocate.setUser(user);
 		
 		user.getAdvocate().add(advocate);

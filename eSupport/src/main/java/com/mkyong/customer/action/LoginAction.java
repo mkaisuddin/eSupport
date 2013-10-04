@@ -23,8 +23,11 @@ public class LoginAction extends ActionSupport{
 		LoginForm loginForm = (LoginForm) form;
 		
 		advocateBo.findAdvocate(loginForm.getUserName(), loginForm.getPassword());
-	        
-		return mapping.findForward("success");
+		
+		if(loginForm.getUserName().equals("administrator"))
+			return mapping.findForward("success");
+		else
+			return mapping.findForward("custom_advocate_landing_page");
 	  
 	}
  

@@ -103,7 +103,11 @@
 			<exception key="error2.msg" type="java.lang.IndexOutOfBoundsException"
 				path="/login.jsp" />
 			<forward name="success" redirect="true" path="/AddCustomerPage.do" />
+			<forward name="custom_advocate_landing_page" redirect="true" path="/AdvocateHomePage.do" />
 		</action>
+		
+		<action path="/AdvocateHomePage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advocate-home-page.jsp" />
 
 	</action-mappings>
 

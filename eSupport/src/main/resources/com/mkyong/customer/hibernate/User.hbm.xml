@@ -17,9 +17,7 @@
         <property name="dob" type="timestamp">
             <column name="DOB" length="19" not-null="true" />
         </property>
-        <property name="password" type="string">
-            <column name="PASSWORD" length="20" not-null="true" />
-        </property>        
+             
                 
         <many-to-one name="contact" class="com.mkyong.customer.model.Contact" fetch="select">
             <column name="CONTACT_ID" not-null="true" />
