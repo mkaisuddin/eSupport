@@ -33,7 +33,7 @@
 				<li><a href="#">Next Week</a></li>
 				<li><a href="#">Team Calendar</a></li>
 				<li><a href="#">Private Calendar</a></li>
-				<li><a href="#">Settings</a></li>
+				<li><html:link action="/AdvancedSearchPage.do">Advance Search</html:link></li>
 			</ul>
 		</li>
 		<li  class="active">

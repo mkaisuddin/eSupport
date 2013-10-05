@@ -46,7 +46,7 @@ public class AddAdvocateAction extends ActionSupport {
 		// Save Contact Detail Info First
 		contactBo.addContact(contact);
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 		
 		User user = new User();
 		

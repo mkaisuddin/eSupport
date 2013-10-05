@@ -19,6 +19,8 @@
 		<form-bean name="caseForm" type="com.mkyong.customer.form.CaseForm" />
 
 		<form-bean name="loginForm" type="com.mkyong.customer.form.LoginForm" />
+		
+		<form-bean name="advanceSearchForm" type="com.mkyong.customer.form.AdvanceSearchForm" />
 
 		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
 			<form-property name="customerList" type="java.util.List" />
@@ -108,6 +110,15 @@
 		
 		<action path="/AdvocateHomePage" type="org.apache.struts.actions.ForwardAction"
 			parameter="/pages/legislative/contents/definations/advocate-home-page.jsp" />
+			
+			
+		<action path="/AdvancedSearchPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advanced-search-form.jsp" />
+		
+		<action path="/AdvanceSearch" type="com.mkyong.customer.action.AdvanceSearchAction"
+			name="advanceSearchForm" validate="false" input="/pages/legislative/contents/definations/advanced-search-form.jsp">
+			<forward name="success" path="/pages/legislative/contents/definations/advanced-search-form.jsp" />
+		</action>
 
 	</action-mappings>
 
