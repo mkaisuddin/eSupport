@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="customerForm" type="com.mkyong.customer.form.CustomerForm" />
+
+		<form-bean name="stageForm" type="com.mkyong.customer.form.StageForm" />
+
+		<form-bean name="courtForm" type="com.mkyong.customer.form.CourtForm" />
+
+		<form-bean name="advocateForm" type="com.mkyong.customer.form.AdvocateForm" />
+
+		<form-bean name="clientForm" type="com.mkyong.customer.form.ClientForm" />
+
+		<form-bean name="caseForm" type="com.mkyong.customer.form.CaseForm" />
+
+		<form-bean name="loginForm" type="com.mkyong.customer.form.LoginForm" />
+		
+		<form-bean name="advanceSearchForm" type="com.mkyong.customer.form.AdvanceSearchForm" />
+
+		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="customerList" type="java.util.List" />
+		</form-bean>
+
+	</form-beans>
+
+	<action-mappings>
+
+		<!-- <action path="/AddCustomerPage" type="org.apache.struts.actions.ForwardAction" 
+			parameter="/pages/customer/add_customer.jsp"/> -->
+		<action path="/AddCustomerPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/user-form.jsp" />
+
+
+		<action path="/AddCustomer" type="com.mkyong.customer.action.AddCustomerAction"
+			name="customerForm" validate="true" input="/pages/customer/add_customer.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/AddStagePage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/stage-form.jsp" />
+
+
+		<action path="/AddStage" type="com.mkyong.customer.action.AddStageAction"
+			name="stageForm" validate="true"
+			input="/pages/legislative/contents/definations/stage-form.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/AddCourtPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/court-form.jsp" />
+
+
+		<action path="/AddCourt" type="com.mkyong.customer.action.AddCourtAction"
+			name="courtForm" validate="true"
+			input="/pages/legislative/contents/definations/court-form.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/ListCustomer" type="com.mkyong.customer.action.ListCustomerAction"
+			name="dynaCustomerListForm">
+
+			<forward name="success" path="/pages/customer/list_customer.jsp" />
+		</action>
+
+		<action path="/AddAdvocatePage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advocate-form.jsp" />
+
+		<action path="/AddAdvocate" type="com.mkyong.customer.action.AddAdvocateAction"
+			name="advocateForm" validate="true"
+			input="/pages/legislative/contents/definations/advocate-form.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/AddClientPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/client-form.jsp" />
+
+		<action path="/AddClient" type="com.mkyong.customer.action.AddClientAction"
+			name="clientForm" validate="true"
+			input="/pages/legislative/contents/definations/client-form.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/AddCasePage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/case-form.jsp" />
+
+		<action path="/AddCase" type="com.mkyong.customer.action.AddCaseAction"
+			name="caseForm" validate="false"
+			input="/pages/legislative/contents/definations/case-form.jsp">
+
+			<forward name="success" redirect="true" path="/ListCustomer.do" />
+		</action>
+
+		<action path="/Login" type="com.mkyong.customer.action.LoginAction"
+			name="loginForm" validate="false" input="/login.jsp">
+			<exception key="error2.msg" type="java.lang.IndexOutOfBoundsException"
+				path="/login.jsp" />
+			<forward name="success" redirect="true" path="/AddCustomerPage.do" />
+			<forward name="custom_advocate_landing_page" redirect="true" path="/AdvocateHomePage.do" />
+		</action>
+		
+		<action path="/AdvocateHomePage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advocate-home-page.jsp" />
+			
+			
+		<action path="/AdvancedSearchPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/legislative/contents/definations/advanced-search-form.jsp" />
+		
+		<action path="/AdvanceSearch" type="com.mkyong.customer.action.AdvanceSearch"
+			name="advanceSearchForm" validate="false" input="/pages/legislative/contents/definations/advocate-home-page.jsp">
+			<forward name="success" redirect="true" path="/AddCustomerPage.do" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.mkyong.customer.properties.Customer" />
+
+	<!-- Spring Struts plugin -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/classes/SpringBeans.xml" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+	</plug-in>
+
+
+</struts-config>
