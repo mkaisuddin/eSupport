@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -22,7 +23,7 @@ public class AddCaseAction extends ActionSupport {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
-		CaseForm caseForm;
+		CaseForm caseForm ;
 		
 		String id = request.getParameter("id");
 		
@@ -31,10 +32,15 @@ public class AddCaseAction extends ActionSupport {
 		Case case1 = new Case();
 		
 		if (id != null && !id.equals("")){
+			caseForm = (CaseForm) form;
 			case1 = caseBo.findCaseById(id);
-			caseForm = new CaseForm();
+			
+			//caseForm.setPrevDate(case1.getPrevDate().toString());
 			caseForm.setComments(case1.getComments());
-			request.setAttribute("case1", case1);
+			caseForm.setCourt(case1.getCourt());
+			//caseForm.setClient(case1.getClient());
+			caseForm.setSpecialNotes(case1.getSpecialNotes());
+			
 			return mapping.findForward("caseUpdate");
 		}else{
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");

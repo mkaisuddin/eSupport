@@ -82,7 +82,7 @@
 		
 		<logic:iterate id="case1" name="advanceSearchForm" property="caseList">
 			<tr>
-				<td><html:link action="/UpdateCasePage.do?id=3"><bean:write name="case1" property="id" /></html:link></td>
+				<td><html:link action="/AddCase.do" paramId="id" paramName="case1" paramProperty="id"><bean:write name="case1" property="id" /></html:link></td>
 				<td><bean:write name="case1" property="nextDate" /></td>
 				<td><bean:write name="case1" property="comments" /></td>
 				<td><bean:write name="case1" property="specialNotes" /></td>
@@ -92,4 +92,25 @@
 
 	</table>
 </logic:notEmpty>
+
+<logic:empty name="advanceSearchForm" property="caseList">
+	<h2>Case Search Details</h2>
+
+	<table border="1">
+		<tr>
+			<td>Case ID</td>
+			<td>Next Date</td>
+			<td>Comments</td>
+			<td>Special Notes</td>
+		</tr>
+		
+		
+			<tr>
+				<td colspan="4">No Results Found</td>
+				
+			</tr>
+		
+
+	</table>
+</logic:empty>
 </div>

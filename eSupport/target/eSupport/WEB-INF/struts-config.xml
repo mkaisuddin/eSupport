@@ -6,6 +6,11 @@
 <struts-config>
 
 	<form-beans>
+
+		<form-bean name="myForm" type="com.mkyong.customer.form.MyForm">
+			<form-property name="fullName" type="java.lang.String" />
+		</form-bean>
+
 		<form-bean name="customerForm" type="com.mkyong.customer.form.CustomerForm" />
 
 		<form-bean name="stageForm" type="com.mkyong.customer.form.StageForm" />
@@ -19,7 +24,7 @@
 		<form-bean name="caseForm" type="com.mkyong.customer.form.CaseForm" />
 
 		<form-bean name="loginForm" type="com.mkyong.customer.form.LoginForm" />
-		
+
 		<form-bean name="advanceSearchForm" type="com.mkyong.customer.form.AdvanceSearchForm" />
 
 		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
@@ -95,32 +100,41 @@
 
 		<action path="/AddCase" type="com.mkyong.customer.action.AddCaseAction"
 			name="caseForm" validate="false"
-			scope="request"
 			input="/pages/legislative/contents/definations/case-form.jsp">
 
 			<forward name="success" redirect="true" path="/ListCustomer.do" />
-			<forward name="caseUpdate" redirect="true" path="/pages/legislative/contents/definations/case-form-update.jsp" />
+			<forward name="caseUpdate" path="/AddCasePage.do" />
 		</action>
+
+		
 
 		<action path="/Login" type="com.mkyong.customer.action.LoginAction"
 			name="loginForm" validate="false" input="/login.jsp">
 			<exception key="error2.msg" type="java.lang.IndexOutOfBoundsException"
 				path="/login.jsp" />
 			<forward name="success" redirect="true" path="/AddCustomerPage.do" />
-			<forward name="custom_advocate_landing_page" redirect="true" path="/AdvocateHomePage.do" />
+			<forward name="custom_advocate_landing_page" redirect="true"
+				path="/AdvocateHomePage.do" />
 		</action>
-		
+
 		<action path="/AdvocateHomePage" type="org.apache.struts.actions.ForwardAction"
 			parameter="/pages/legislative/contents/definations/advocate-home-page.jsp" />
-			
-			
+
+
 		<action path="/AdvancedSearchPage" type="org.apache.struts.actions.ForwardAction"
 			parameter="/pages/legislative/contents/definations/advanced-search-form.jsp" />
-		
+
 		<action path="/AdvanceSearch" type="com.mkyong.customer.action.AdvanceSearchAction"
-			name="advanceSearchForm" validate="false" input="/pages/legislative/contents/definations/advanced-search-form.jsp">
-			<forward name="success" path="/pages/legislative/contents/definations/advanced-search-form.jsp" />
+			name="advanceSearchForm" validate="false"
+			input="/pages/legislative/contents/definations/advanced-search-form.jsp">
+			<forward name="success"
+				path="/pages/legislative/contents/definations/advanced-search-form.jsp" />
 		</action>
+
+		
+
+
+
 
 	</action-mappings>
 
