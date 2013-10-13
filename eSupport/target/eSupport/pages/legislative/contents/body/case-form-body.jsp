@@ -24,7 +24,7 @@
 							:
 						</div>
 
-						<html:textarea property="comments" cols="50" rows="2" />
+						<html:textarea name="caseForm" property="comments" cols="50" rows="2" />
 					</div></td>
 			<tr>
 			<tr>

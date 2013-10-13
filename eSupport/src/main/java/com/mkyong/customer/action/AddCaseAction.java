@@ -34,6 +34,7 @@ public class AddCaseAction extends ActionSupport {
 			case1 = caseBo.findCaseById(id);
 			caseForm = new CaseForm();
 			caseForm.setComments(case1.getComments());
+			request.setAttribute("case1", case1);
 			return mapping.findForward("caseUpdate");
 		}else{
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");

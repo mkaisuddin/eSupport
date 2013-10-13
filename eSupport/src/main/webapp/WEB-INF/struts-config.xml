@@ -98,6 +98,7 @@
 			input="/pages/legislative/contents/definations/case-form.jsp">
 
 			<forward name="success" redirect="true" path="/ListCustomer.do" />
+			<forward name="caseUpdate" redirect="true" path="/pages/legislative/contents/definations/case-form-update.jsp" />
 		</action>
 
 		<action path="/Login" type="com.mkyong.customer.action.LoginAction"
