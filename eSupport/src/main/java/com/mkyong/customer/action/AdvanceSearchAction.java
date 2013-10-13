@@ -28,8 +28,8 @@ public class AdvanceSearchAction extends ActionSupport {
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		
-		List<Case> list = caseBo.findCases(Long.parseLong(advanceSearchForm.getId()), advanceSearchForm.getFirstName(), advanceSearchForm.getLastName(), 
-				formatter.parse(advanceSearchForm.getFromDate()), formatter.parse(advanceSearchForm.getToDate()));
+		List<Case> list = caseBo.findCases(advanceSearchForm.getId(), advanceSearchForm.getFirstName(), advanceSearchForm.getLastName(), 
+				advanceSearchForm.getFromDate(), advanceSearchForm.getToDate());
 		
 		advanceSearchForm.setCaseList(list);
 		request.setAttribute("customerList", list);

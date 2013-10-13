@@ -1,5 +1,6 @@
 package com.mkyong.customer.bo;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +11,8 @@ public interface CaseBo{
  
 	void addCase (Case case1);
 	
-	List<Case> findCases(long id, String firstName, String lastName, Date fromDate, Date toDate);
+	List<Case> findCases(String id, String firstName, String lastName, String fromDate, String toDate) throws ParseException;
+	
+	Case findCaseById(String id) throws ParseException;
  
 }

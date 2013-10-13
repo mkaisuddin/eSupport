@@ -23,5 +23,7 @@
 	<tiles:insert attribute="body" />
 
 	<tiles:insert attribute="footer" />
+	
+	<a href="http://info.flagcounter.com/wFSP"><img src="http://s10.flagcounter.com/count/wFSP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_1/" alt="Flag Counter" border="0"></a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?
 <!DOCTYPE struts-config PUBLIC 
 "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
 "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
@@ -98,6 +98,7 @@
 			input="/pages/legislative/contents/definations/case-form.jsp">
 
 			<forward name="success" redirect="true" path="/ListCustomer.do" />
+			<forward name="caseUpdate" redirect="true" path="/AddCasePage.do" />
 		</action>
 
 		<action path="/Login" type="com.mkyong.customer.action.LoginAction"

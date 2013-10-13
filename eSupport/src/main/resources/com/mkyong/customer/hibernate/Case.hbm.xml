@@ -12,6 +12,10 @@
             <column name="COURT_ID" length="45" not-null="true" />
         </property>
         
+         <property name="Client" type="string">
+            <column name="CLIENT_ID" length="45"/>
+        </property>
+        
          <property name="nextDate" type="timestamp">
             <column name="NEXT_DATE" length="19" not-null="true" />
         </property>

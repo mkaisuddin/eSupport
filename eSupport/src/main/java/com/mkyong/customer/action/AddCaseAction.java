@@ -1,6 +1,8 @@
 package com.mkyong.customer.action;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,20 +21,33 @@ public class AddCaseAction extends ActionSupport {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
+		
+		CaseForm caseForm;
+		
+		String id = request.getParameter("id");
+		
 		CaseBo caseBo = (CaseBo) getWebApplicationContext().getBean(
 				"caseBo");
-		
-		CaseForm caseForm = (CaseForm) form;
-		
 		Case case1 = new Case();
 		
-		case1.setCourt(caseForm.getCourt());
-		case1.setCreatedDate(new Date());
-		caseBo.addCase(case1);
-
-		return mapping.findForward("success");
-
+		if (id != null && !id.equals("")){
+			case1 = caseBo.findCaseById(id);
+			caseForm = new CaseForm();
+			caseForm.setComments(case1.getComments());
+			return mapping.findForward("caseUpdate");
+		}else{
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+			
+			caseForm = (CaseForm) form;
+			case1.setCourt(caseForm.getCourt());
+			case1.setPrevDate(formatter.parse(caseForm.getPrevDate()));
+			case1.setNextDate(formatter.parse(caseForm.getNextDate()));
+			case1.setComments(caseForm.getComments());
+			case1.setSpecialNotes(caseForm.getSpecialNotes());
+			caseBo.addCase(case1);
+			return mapping.findForward("success");
+		}
+		
 	}
 
 }

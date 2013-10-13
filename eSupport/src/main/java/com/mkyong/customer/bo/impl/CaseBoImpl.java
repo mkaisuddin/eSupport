@@ -1,5 +1,6 @@
 package com.mkyong.customer.bo.impl;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,13 @@ public class CaseBoImpl implements CaseBo{
 
 	}
 
-	public List<Case> findCases(long id, String firstName, String lastName,
-			Date fromDate, Date toDate) {
+	public List<Case> findCases(String id, String firstName, String lastName,
+			String fromDate, String toDate) throws ParseException {
 		return caseDao.findCases(id, firstName, lastName, fromDate, toDate);
+	}
+
+	public Case findCaseById(String id) throws ParseException {
+		return caseDao.findCaseByID(id);
 	}
 	
  
