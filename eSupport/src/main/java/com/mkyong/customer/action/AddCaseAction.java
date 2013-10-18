@@ -43,7 +43,7 @@ public class AddCaseAction extends ActionSupport {
 			
 			return mapping.findForward("caseUpdate");
 		}else{
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 			
 			caseForm = (CaseForm) form;
 			case1.setCourt(caseForm.getCourt());
